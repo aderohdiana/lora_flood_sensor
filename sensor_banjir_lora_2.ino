@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // Program sensor banjir
 // 12-02-2020
+=======
+>>>>>>> 12fea5ca77cfeedb3fee8b9343a5d7411b914059
 
 #include <lmic.h>
 #include <hal/hal.h>
@@ -8,6 +11,10 @@
 
 CayenneLPP lpp(51);
 
+<<<<<<< HEAD
+=======
+//coba
+>>>>>>> 12fea5ca77cfeedb3fee8b9343a5d7411b914059
 //timer deep sleep
 #define uS_TO_S_FACTOR 1000000ULL  /* Conversion factor for micro seconds to seconds */
 int TIME_TO_SLEEP = 60;       /* Time ESP32 will go to sleep (in seconds) */
@@ -237,7 +244,19 @@ void setup() {
 }
 
 void loop() {
+<<<<<<< HEAD
 
+=======
+  //  unsigned long currentMillis = millis(); // grab current time
+  //
+  //  // check if "interval" time has passed (1000 milliseconds)
+  //  if ((unsigned long)(currentMillis - previousMillis) >= interval) {
+  //
+  //    printDataSensor();
+  //    // save the "current" time
+  //    previousMillis = millis();
+  //  }
+>>>>>>> 12fea5ca77cfeedb3fee8b9343a5d7411b914059
   os_runloop_once();
 
 }
@@ -257,15 +276,24 @@ void printDataSensor() {
     lpp.addDigitalInput(1, level);
     Serial.println("1 Meter");
     delay(100);
+<<<<<<< HEAD
     Serial.println("tidur 4 menit");
     int TIME_TO_SLEEP = TIME_TO_SLEEP * 4;
+=======
+    Serial.println("tidur 3 menit");
+    int TIME_TO_SLEEP = TIME_TO_SLEEP * 2;
+>>>>>>> 12fea5ca77cfeedb3fee8b9343a5d7411b914059
   }
   else if (sensorVal1 == LOW && sensorVal2 == LOW && sensorVal3 == HIGH) {
     level = 2;
     lpp.addDigitalInput(1, level);
     Serial.println("2 meter");
     delay(100);
+<<<<<<< HEAD
     Serial.println("tidur 3 menit");
+=======
+    Serial.println("tidur 4 menit");
+>>>>>>> 12fea5ca77cfeedb3fee8b9343a5d7411b914059
     int TIME_TO_SLEEP = TIME_TO_SLEEP * 3;
   }
   else if (sensorVal1 == LOW && sensorVal2 == LOW && sensorVal3 == LOW) {
@@ -273,15 +301,23 @@ void printDataSensor() {
     lpp.addDigitalInput(1, level);
     Serial.println("3 meter");
     delay(100);
+<<<<<<< HEAD
     Serial.println("tidur 2 menit");
     int TIME_TO_SLEEP = TIME_TO_SLEEP * 2;
+=======
+    Serial.println("tidur 5 menit");
+    int TIME_TO_SLEEP = TIME_TO_SLEEP * 4;
+>>>>>>> 12fea5ca77cfeedb3fee8b9343a5d7411b914059
   }
   else {
     level = 0;
     lpp.addDigitalInput(1, level);
     Serial.println("0 Meter");
+<<<<<<< HEAD
     delay(100);
     Serial.println("tidur 1 menit");
+=======
+>>>>>>> 12fea5ca77cfeedb3fee8b9343a5d7411b914059
     int TIME_TO_SLEEP = TIME_TO_SLEEP * 1;
   }
 }
